@@ -25,10 +25,8 @@ class Triangle
   		:equilateral
   	elsif self.a == self.b or self.b == self.c or self.a == self.c
   		:isosceles
-  	else#if self.a != self.b && self.b != self.c && self.a != self.c
+  	else
   		:scalene
-  	# else
-  		# Triangle.error
   	end
   end
 
