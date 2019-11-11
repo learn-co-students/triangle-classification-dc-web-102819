@@ -14,9 +14,9 @@ class Triangle
 	#fail if any side <= 0
 	elsif [a,b,c].any? {|side| side <= 0}
 		validate = false
-	#fail if the sum of any two is not longer than the third
+	#fail if the sum of any two sides is not longer than the third
   	else
-	  	#that means that he sum of the shortest two sides
+	  	#that means that the sum of the shortest two sides
 	  	sides_by_length = [a,b,c].sort
 	  	#MUST be longer than the longest side
 	  	validate = sides_by_length[0] + sides_by_length[1] > sides_by_length[2]
