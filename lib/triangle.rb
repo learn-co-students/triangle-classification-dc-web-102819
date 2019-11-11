@@ -21,7 +21,6 @@ class Triangle
   		raise TriangleError
   	end
 
-
   	if self.a == self.b and self.b == self.c
   		:equilateral
   	elsif self.a == self.b or self.b == self.c or self.a == self.c
