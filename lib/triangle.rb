@@ -8,17 +8,19 @@ class Triangle
   end
 
   def kind
-
-  	sides_by_length = [a,b,c].sort
-  	#if the sum of any two sides MUST be longer than the third
-  	#that means that he sum of the shortest two sides
-  	#MUST be longer than the longest side
-  	validate = sides_by_length[0] + sides_by_length[1] > sides_by_length[2]
-
-  	if [a,b,c].any? {|side| side <= 0}
-  		#if any sides are less than or equal to zero the validation will fail
+	#fail if any side == nil
+  	if [a,b,c].any? {|side| side == nil}
 		validate = false
-  	end
+	#fail if any side <= 0
+	elsif [a,b,c].any? {|side| side <= 0}
+		validate = false
+	#fail if the sum of any two is not longer than the third
+  	else
+	  	#that means that he sum of the shortest two sides
+	  	sides_by_length = [a,b,c].sort
+	  	#MUST be longer than the longest side
+	  	validate = sides_by_length[0] + sides_by_length[1] > sides_by_length[2]
+	end
 
   	if !validate
   		raise TriangleError
